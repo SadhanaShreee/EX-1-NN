@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>NAME : Sadhana Shree B</H3>
+<H3>REGISTER NO: 212223230177</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>DATE: </H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,8 +37,9 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
-# STEP 1: Importing the libraries
+
+```
+STEP 1: Importing the libraries
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder, StandardScaler
@@ -47,7 +48,7 @@ from IPython.display import display  # For table output
 
 # STEP 2: Importing the dataset
 dataset = pd.read_csv('/mnt/data/Churn_Modelling.csv')
-print("✅ Original Dataset:")
+print("Original Dataset:")
 display(dataset.head())
 
 # Drop unnecessary columns
@@ -61,7 +62,7 @@ le = LabelEncoder()
 dataset['Geography'] = le.fit_transform(dataset['Geography'])
 dataset['Gender'] = le.fit_transform(dataset['Gender'])
 
-print("✅ After encoding 'Geography' and 'Gender':")
+print("After encoding 'Geography' and 'Gender':")
 display(dataset[['Geography', 'Gender']].head())
 
 # STEP 5: Normalizing the data
@@ -71,21 +72,23 @@ y = dataset['Exited']
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-print("✅ First 5 rows after Normalization:")
+print("First 5 rows after Normalization:")
 display(pd.DataFrame(X_scaled, columns=X.columns).head())
 
 # STEP 6: Splitting the data
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-print("✅ Dataset Shapes:")
+print("Dataset Shapes:")
 print("X_train:", X_train.shape)
 print("X_test:", X_test.shape)
 print("y_train:", y_train.shape)
 print("y_test:", y_test.shape)
-
+```
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+
+![image](https://github.com/user-attachments/assets/4b31f512-5b69-4005-8da3-007518ced401)
+![image](https://github.com/user-attachments/assets/6baa2d5a-ab18-4b69-bc86-76e42b73a7c1)
 
 
 
